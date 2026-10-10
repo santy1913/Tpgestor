@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- data-bs-theme="dark" activa el modo oscuro de Bootstrap 5.3 (requisito 2 del TP) -->
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <!-- Esta línea hace que la página se adapte al ancho del celular (responsive) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retro Santy Store | Gestor de Juegos</title>
+
+  <!-- Bootstrap por CDN, en el <head> (requisito 1 del TP) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== BARRA DE NAVEGACIÓN (navbar) ===== -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom border-warning">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-warning" href="#inicio">🕹️ Retro Santy Store</a>
+      <!-- Botón "hamburguesa" que aparece en el celular -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#destacado">Juego destacado</a></li>
+          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ranking">Ranking</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PORTADA ===== -->
+  <header id="inicio" class="container text-center py-5 my-3">
+    <h1 class="display-4 fw-bold text-warning">Retro Santy Store</h1>
+    <p class="lead text-secondary">Tu catálogo de juegos arcade y retro. Elegí, compará y jugá.</p>
+    <a href="#catalogo" class="btn btn-outline-warning btn-lg m-2">Ver catálogo</a>
+    <a href="#destacado" class="btn btn-warning btn-lg m-2">Jugar ahora</a>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== JUEGO DESTACADO (Featured Game): mi propio videojuego ===== -->
+    <section id="destacado" class="mb-5">
+      <h2 class="text-center text-warning mb-4">⭐ Juego destacado</h2>
+      <div class="card border-warning mb-3">
+        <div class="row g-0">
+          <!-- En PC la imagen va a la izquierda (col-md-4) y el texto a la derecha (col-md-8); en celular se apilan -->
+          <div class="col-md-4 d-flex align-items-center justify-content-center bg-black p-4">
+            <div class="text-center">
+              <div class="display-1">🥊</div>
+              <h3 class="fw-bold text-warning">NEON<br><span class="text-info">FIGHTERS</span></h3>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <span class="badge text-bg-warning mb-2">Hecho por mí · JavaScript + Canvas</span>
+              <h4 class="card-title">Neon Fighters (remake de Street Fighter II)</h4>
+              <p class="card-text">
+                Mi versión del clásico de peleas para 2 jugadores: personajes con otros colores,
+                escenario y música propios, daños y velocidades rebalanceados, y dos mecánicas nuevas:
+                <strong>recarga del Hadouken</strong> y <strong>estadísticas de la pelea</strong>.
+              </p>
+              <p class="card-text"><small class="text-secondary">Jugable en la compu con teclado (2 jugadores).</small></p>
+              <!-- BOTÓN QUE ABRE MI JUEGO EN GITHUB PAGES (requisito 6) -->
+              <a href="https://TU-USUARIO.github.io/sf-custom/" target="_blank" rel="noopener"
+                 class="btn btn-warning btn-lg" id="boton-juego">▶ Jugar Neon Fighters</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATÁLOGO EN TARJETAS ===== -->
+    <section id="catalogo" class="mb-5">
+      <h2 class="text-center text-warning mb-4">📦 Catálogo</h2>
+      <!-- row-cols-*: 1 tarjeta por fila en celular, 2 en tablet, 4 en PC -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <div class="display-3">🏎️</div>
+              <h5 class="card-title mt-2">Turbo Racer</h5>
+              <p class="card-text text-secondary">Carreras arcade a toda velocidad.</p>
+              <span class="badge text-bg-info">Carreras</span>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-warning">$ 4.500</span>
+              <button class="btn btn-sm btn-outline-warning">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <div class="display-3">👾</div>
+              <h5 class="card-title mt-2">Space Invaders 2000</h5>
+              <p class="card-text text-secondary">Defendé la Tierra de los invasores.</p>
+              <span class="badge text-bg-success">Shooter</span>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-warning">$ 3.200</span>
+              <button class="btn btn-sm btn-outline-warning">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <div class="display-3">🧙</div>
+              <h5 class="card-title mt-2">Dungeon Pixel</h5>
+              <p class="card-text text-secondary">Aventura indie con mazmorras.</p>
+              <span class="badge text-bg-primary">Indie / RPG</span>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-warning">$ 5.900</span>
+              <button class="btn btn-sm btn-outline-warning">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <div class="display-3">⚽</div>
+              <h5 class="card-title mt-2">E-Soccer Arena</h5>
+              <p class="card-text text-secondary">Fútbol competitivo online (e-sports).</p>
+              <span class="badge text-bg-danger">E-sports</span>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-warning">$ 7.800</span>
+              <button class="btn btn-sm btn-outline-warning">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== TABLA DE DATOS: RANKING DE JUGADORES (requisito 4) ===== -->
+    <section id="ranking" class="mb-5">
+      <h2 class="text-center text-warning mb-4">🏆 Ranking de jugadores</h2>
+      <!-- table-responsive: en el celular la tabla se desliza de costado en vez de romper la página -->
+      <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover align-middle text-center">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Jugador</th>
+              <th scope="col">Juego</th>
+              <th scope="col">Puntos</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-warning">1</th>
+              <td>Santy</td>
+              <td>Neon Fighters</td>
+              <td>9.850</td>
+              <td><span class="badge text-bg-success">Campeón</span></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>LuchiGamer</td>
+              <td>Turbo Racer</td>
+              <td>8.400</td>
+              <td><span class="badge text-bg-primary">Pro</span></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>PixelFede</td>
+              <td>Dungeon Pixel</td>
+              <td>7.120</td>
+              <td><span class="badge text-bg-primary">Pro</span></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>NoeTheBest</td>
+              <td>E-Soccer Arena</td>
+              <td>5.900</td>
+              <td><span class="badge text-bg-secondary">Novato</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="bg-body-tertiary border-top border-warning py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-1 text-warning fw-bold">Retro Santy Store</p>
+      <p class="mb-0 text-secondary small">TP 14 (Recuperatorio) · Laboratorio de Programación · 6° G · IPET 249</p>
+    </div>
+  </footer>
+
+  <!-- JS de Bootstrap: lo necesita el botón hamburguesa del navbar -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
